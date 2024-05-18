@@ -10,14 +10,16 @@ export function DeleteVideo()
     const [videos, setVideos] = useState([{VideoId:0, Title:'', Url:'', Description:'', Views:0, Likes:0, Dislikes:0, CategoryId:0}]);
 
     useEffect(()=>{
-        axios.get(`http://127.0.0.1:3030/get-video/${params.id}`)
+        // axios.get(`http://127.0.0.1:3030/get-video/${params.id}`)
+        axios.get(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/get-video/${params.id}`)
         .then(response=>{
             setVideos(response.data);
         })
     },[])
 
     function handleYesClick(){
-        axios.delete(`http://127.0.0.1:3030/delete-video/${params.id}`)
+        // axios.delete(`http://127.0.0.1:3030/delete-video/${params.id}`)
+        axios.delete(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/delete-video/${params.id}`)
         .then(()=>{
             navigate("/admin-dashboard");
         })

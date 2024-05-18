@@ -16,7 +16,8 @@ export function EditVideo(){
     const formik = useFormik({
         initialValues: {VideoId:videos[0].VideoId, Title:videos[0].Title, Url:videos[0].Url, Description:videos[0].Description, Views:videos[0].Views, Likes:videos[0].Likes, Dislikes:videos[0].Dislikes, CategoryId:videos[0].CategoryId},
         onSubmit: (video)=>{
-           axios.put(`http://127.0.0.1:3030/edit-video/${video.VideoId}`, video)
+        //    axios.put(`http://127.0.0.1:3030/edit-video/${video.VideoId}`, video)
+        axios.put(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/edit-video/${video.VideoId}`, video)
            .then(()=>{
               alert('Video Updated Successfully..');
               navigate('/admin-dashboard');
@@ -26,13 +27,15 @@ export function EditVideo(){
     })
 
     function LoadVideo(){
-        axios.get(`http://127.0.0.1:3030/get-video/${params.id}`)
+        // axios.get(`http://127.0.0.1:3030/get-video/${params.id}`)
+        axios.get(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/get-video/${params.id}`)
         .then(response=>{
             setVideos(response.data);
         })
     }
     function LoadCategories(){
-        axios.get('http://127.0.0.1:3030/get-categories')
+        // axios.get('http://127.0.0.1:3030/get-categories')
+        axios.get('https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/get-categories')
         .then(response=>{
             response.data.unshift({CategoryId:'-1', CategoryName:'Select Category'});
             setCategories(response.data);
