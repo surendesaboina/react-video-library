@@ -11,7 +11,7 @@ app.use(express.json());
 // here
 app.use(cors(
     {
-        origin :['http://127.0.0.1:3030'],
+        origin :['https://react-video-library-client.vercel.app'],
         methods : ['POST','GET'],
         credentials : true
     }
@@ -151,4 +151,4 @@ app.delete("/delete-video/:id", (req, res)=>{
 
 
 app.listen(3030);
-console.log(`Server Started : http://127.0.0.1:3030`);
+console.log(`Server Started : https://react-video-library-client.vercel.app`);
