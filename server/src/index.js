@@ -1,98 +1,297 @@
+// var express = require("express");
+// var mongoClient = require("mongodb").MongoClient;
+// var cors = require("cors");
+
+// // var conString = "mongodb://127.0.0.1:27017";
+// // var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/";
+// var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+// var app = express();
+// app.use(express.urlencoded({extended:true}));
+// app.use(express.json());
+// // here
+// app.use(cors(
+//     {
+//         origin :['https://react-video-library-client.vercel.app'],
+//         methods : ['POST','GET'],
+//         credentials : true
+//     }
+// ));
+
+
+// app.get("/get-users", (req, res)=>{
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblusers").find({}).toArray().then(documents=>{
+//              res.send(documents);
+//              res.end();
+//         });
+//     });
+// });
+
+
+// app.post("/register-user",(req, res)=>{
+
+//     var user = {
+//         UserId: req.body.UserId,
+//         UserName: req.body.UserName, 
+//         Password: req.body.Password, 
+//         Email: req.body.Email, 
+//         Mobile: req.body.Mobile
+//     };
+
+//     mongoClient.connect(conString).then(clientObject=>{
+
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblusers").insertOne(user).then(()=>{
+//             console.log('User Registered');
+//             res.end();
+//         });
+//     });
+
+// });
+
+// app.get("/get-admin", (req, res)=>{
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tbladmin").find({}).toArray().then(documents=>{
+//              res.send(documents);
+//              res.end();
+//         });
+//     });
+// });
+
+// app.get("/get-categories", (req, res)=>{
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblcategories").find({}).toArray().then(documents=>{
+//              res.send(documents);
+//              res.end();
+//         });
+//     });
+// });
+
+// app.get("/get-videos", (req, res)=>{
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblvideos").find({}).toArray().then(documents=>{
+//              res.send(documents);
+//              res.end();
+//         });
+//     });
+// });
+
+// app.get("/get-video/:id", (req, res)=>{
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblvideos").find({VideoId:parseInt(req.params.id)}).toArray().then(documents=>{
+//              res.send(documents);
+//              res.end();
+//         });
+//     });
+// });
+
+// app.post("/add-video", (req, res)=>{
+
+//     var video = {
+//         VideoId: parseInt(req.body.VideoId),
+//         Title: req.body.Title,
+//         Url: req.body.Url,
+//         Description: req.body.Description,
+//         Likes: parseInt(req.body.Likes),
+//         Dislikes: parseInt(req.body.Dislikes),
+//         Views: parseInt(req.body.Views),
+//         CategoryId: parseInt(req.body.CategoryId)
+//     }
+
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblvideos").insertOne(video).then(()=>{
+//              console.log('Video Added Successfully..');
+//              res.end();
+//         })
+//     });
+// });
+
+// app.put("/edit-video/:id", (req, res)=>{
+
+//     var id = parseInt(req.params.id);
+
+//     var video = {
+//         VideoId: parseInt(req.body.VideoId),
+//         Title: req.body.Title,
+//         Url: req.body.Url,
+//         Description: req.body.Description,
+//         Likes: parseInt(req.body.Likes),
+//         Dislikes: parseInt(req.body.Dislikes),
+//         Views: parseInt(req.body.Views),
+//         CategoryId: parseInt(req.body.CategoryId)
+//     }
+
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblvideos").updateOne({VideoId:id},{$set:video}).then(()=>{
+//             console.log(`Video Updated`);
+//             res.end();
+//         })
+//     });
+// });
+
+// app.delete("/delete-video/:id", (req, res)=>{
+
+//     var id = parseInt(req.params.id);
+
+//     mongoClient.connect(conString).then(clientObject=>{
+//         var database = clientObject.db("react-video-library");
+//         database.collection("tblvideos").deleteOne({VideoId:id}).then(()=>{
+//             console.log(`Video Deleted`);
+//             res.end();
+//         })
+//     });
+// });
+
+
+// app.listen(3030);
+// console.log(`Server Started : https://react-video-library-client.vercel.app`);
+
 var express = require("express");
 var mongoClient = require("mongodb").MongoClient;
 var cors = require("cors");
 
-// var conString = "mongodb://127.0.0.1:27017";
-// var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/";
-var conString = "mongodb+srv://surendesaboina:Suren@535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// MongoDB connection string
+var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 var app = express();
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// here
-app.use(cors(
-    {
-        origin :['https://react-video-library-client.vercel.app'],
-        methods : ['POST','GET'],
-        credentials : true
-    }
-));
 
+// CORS configuration
+app.use(cors({
+    origin: 'https://react-video-library-client.vercel.app',
+    methods: ['POST', 'GET', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
-app.get("/get-users", (req, res)=>{
-    mongoClient.connect(conString).then(clientObject=>{
+// Endpoint to get users
+app.get("/get-users", (req, res) => {
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblusers").find({}).toArray().then(documents=>{
-             res.send(documents);
-             res.end();
+        database.collection("tblusers").find({}).toArray().then(documents => {
+            res.send(documents);
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
         });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-
-app.post("/register-user",(req, res)=>{
-
+// Endpoint to register user
+app.post("/register-user", (req, res) => {
     var user = {
         UserId: req.body.UserId,
-        UserName: req.body.UserName, 
-        Password: req.body.Password, 
-        Email: req.body.Email, 
+        UserName: req.body.UserName,
+        Password: req.body.Password,
+        Email: req.body.Email,
         Mobile: req.body.Mobile
     };
 
-    mongoClient.connect(conString).then(clientObject=>{
-
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblusers").insertOne(user).then(()=>{
+        database.collection("tblusers").insertOne(user).then(() => {
             console.log('User Registered');
             res.end();
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
         });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
-
 });
 
-app.get("/get-admin", (req, res)=>{
-    mongoClient.connect(conString).then(clientObject=>{
+// Endpoint to get admin
+app.get("/get-admin", (req, res) => {
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tbladmin").find({}).toArray().then(documents=>{
-             res.send(documents);
-             res.end();
+        database.collection("tbladmin").find({}).toArray().then(documents => {
+            res.send(documents);
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
         });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-app.get("/get-categories", (req, res)=>{
-    mongoClient.connect(conString).then(clientObject=>{
+// Endpoint to get categories
+app.get("/get-categories", (req, res) => {
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblcategories").find({}).toArray().then(documents=>{
-             res.send(documents);
-             res.end();
+        database.collection("tblcategories").find({}).toArray().then(documents => {
+            res.send(documents);
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
         });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-app.get("/get-videos", (req, res)=>{
-    mongoClient.connect(conString).then(clientObject=>{
+// Endpoint to get videos
+app.get("/get-videos", (req, res) => {
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblvideos").find({}).toArray().then(documents=>{
-             res.send(documents);
-             res.end();
+        database.collection("tblvideos").find({}).toArray().then(documents => {
+            res.send(documents);
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
         });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-app.get("/get-video/:id", (req, res)=>{
-    mongoClient.connect(conString).then(clientObject=>{
+// Endpoint to get a specific video by ID
+app.get("/get-video/:id", (req, res) => {
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblvideos").find({VideoId:parseInt(req.params.id)}).toArray().then(documents=>{
-             res.send(documents);
-             res.end();
+        database.collection("tblvideos").find({ VideoId: parseInt(req.params.id) }).toArray().then(documents => {
+            res.send(documents);
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
         });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-app.post("/add-video", (req, res)=>{
-
+// Endpoint to add a video
+app.post("/add-video", (req, res) => {
     var video = {
         VideoId: parseInt(req.body.VideoId),
         Title: req.body.Title,
@@ -102,19 +301,27 @@ app.post("/add-video", (req, res)=>{
         Dislikes: parseInt(req.body.Dislikes),
         Views: parseInt(req.body.Views),
         CategoryId: parseInt(req.body.CategoryId)
-    }
+    };
 
-    mongoClient.connect(conString).then(clientObject=>{
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblvideos").insertOne(video).then(()=>{
-             console.log('Video Added Successfully..');
-             res.end();
-        })
+        database.collection("tblvideos").insertOne(video).then(() => {
+            console.log('Video Added Successfully.');
+            res.end();
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
+        });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-app.put("/edit-video/:id", (req, res)=>{
-
+// Endpoint to edit a video by ID
+app.put("/edit-video/:id", (req, res) => {
     var id = parseInt(req.params.id);
 
     var video = {
@@ -126,30 +333,46 @@ app.put("/edit-video/:id", (req, res)=>{
         Dislikes: parseInt(req.body.Dislikes),
         Views: parseInt(req.body.Views),
         CategoryId: parseInt(req.body.CategoryId)
-    }
+    };
 
-    mongoClient.connect(conString).then(clientObject=>{
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblvideos").updateOne({VideoId:id},{$set:video}).then(()=>{
+        database.collection("tblvideos").updateOne({ VideoId: id }, { $set: video }).then(() => {
             console.log(`Video Updated`);
             res.end();
-        })
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
+        });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-app.delete("/delete-video/:id", (req, res)=>{
-
+// Endpoint to delete a video by ID
+app.delete("/delete-video/:id", (req, res) => {
     var id = parseInt(req.params.id);
 
-    mongoClient.connect(conString).then(clientObject=>{
+    mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
-        database.collection("tblvideos").deleteOne({VideoId:id}).then(()=>{
+        database.collection("tblvideos").deleteOne({ VideoId: id }).then(() => {
             console.log(`Video Deleted`);
             res.end();
-        })
+            clientObject.close();
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+            clientObject.close();
+        });
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
     });
 });
 
-
-// app.listen('https://react-video-library-server.vercel.app');
-console.log(`Server Started : https://react-video-library-client.vercel.app`);
+app.listen(3030, () => {
+    console.log(`Server Started: http://localhost:3030`);
+});
