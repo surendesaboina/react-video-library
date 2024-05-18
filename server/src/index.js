@@ -4,7 +4,7 @@ var cors = require("cors");
 
 // var conString = "mongodb://127.0.0.1:27017";
 // var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/";
-var conString = "mongodb+srv://surendesaboina:<password>@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+var conString = "mongodb+srv://surendesaboina:Suren@535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 var app = express();
 app.use(express.urlencoded({extended:true}));
