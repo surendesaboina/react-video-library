@@ -158,7 +158,6 @@ var express = require("express");
 var mongoClient = require("mongodb").MongoClient;
 var cors = require("cors");
 
-// MongoDB connection string
 var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 var app = express();
@@ -168,12 +167,22 @@ app.use(express.json());
 // CORS configuration
 app.use(cors({
     origin: 'https://react-video-library-client.vercel.app',
-    methods: ['POST', 'GET', 'PUT', 'DELETE'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
 
-// Endpoint to get users
+// Middleware to set CORS headers
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://react-video-library-client.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    if (req.method === "OPTIONS") {
+        return res.status(200).json({});
+    }
+    next();
+});
+
 app.get("/get-users", (req, res) => {
     mongoClient.connect(conString).then(clientObject => {
         var database = clientObject.db("react-video-library");
