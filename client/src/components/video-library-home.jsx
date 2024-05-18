@@ -32,7 +32,7 @@ export function VideoLibraryHome()
        initialValues: {UserId:'', UserName:'', Password:'', Email:'', Mobile:''},
        onSubmit: (user)=>{
         //   axios.get(`http://127.0.0.1:3030/get-users`)
-        axios.get(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/get-users`)
+        axios.get(`https://react-video-library-server.vercel.app/get-users`)
           .then(response=>{
               var data = response.data.find(client=> client.Email===user.Email);
               if(data){

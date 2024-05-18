@@ -11,7 +11,7 @@ export function DeleteVideo()
 
     useEffect(()=>{
         // axios.get(`http://127.0.0.1:3030/get-video/${params.id}`)
-        axios.get(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/get-video/${params.id}`)
+        axios.get(`https://react-video-library-server.vercel.app/get-video/${params.id}`)
         .then(response=>{
             setVideos(response.data);
         })
@@ -19,7 +19,7 @@ export function DeleteVideo()
 
     function handleYesClick(){
         // axios.delete(`http://127.0.0.1:3030/delete-video/${params.id}`)
-        axios.delete(`https://react-video-library-server-56f4m4zov-surendesaboinas-projects.vercel.app/delete-video/${params.id}`)
+        axios.delete(`https://react-video-library-server.vercel.app/delete-video/${params.id}`)
         .then(()=>{
             navigate("/admin-dashboard");
         })
