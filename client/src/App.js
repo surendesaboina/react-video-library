@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import { VideoLibraryHome } from './components/video-library-home';

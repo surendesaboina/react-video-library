@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "6645e6a540402e21ac7aa7ad"
+  },
+  "CategoryId": 1,
+  "CategoryName": "React JS"
+},
+{
+  "_id": {
+    "$oid": "6645e70940402e21ac7aa7ae"
+  },
+  "CategoryId": 2,
+  "CategoryName": "Oracel"
+},
+{
+  "_id": {
+    "$oid": "6645e70940402e21ac7aa7af"
+  },
+  "CategoryId": 3,
+  "CategoryName": "Java"
+}]

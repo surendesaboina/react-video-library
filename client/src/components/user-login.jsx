@@ -16,7 +16,6 @@ export function UserLogin(){
             Password: ''
         },
         onSubmit: (user)=> {
-            // axios.get('http://127.0.0.1:3030/get-users')
             axios.get('https://react-video-library-server.vercel.app/get-users')
             .then(response=>{
                   var data = response.data.find(item => item.UserId===user.UserId);

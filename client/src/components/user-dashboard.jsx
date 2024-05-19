@@ -13,7 +13,6 @@ export function UserDashboard(){
    
 
     function LoadVideos(){
-        // axios.get('http://127.0.0.1:3030/get-videos')
         axios.get('https://react-video-library-server.vercel.app/get-videos')
         .then(response=>{
             setVideos(response.data);

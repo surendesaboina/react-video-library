@@ -2,14 +2,13 @@ var express = require("express");
 var mongoClient = require("mongodb").MongoClient;
 var cors = require("cors");
 
-// var conString = "mongodb://127.0.0.1:27017";
-// var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/";
+
 var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 var app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-// here
+
 app.use(cors(
     {
         origin :['https://react-video-library-client.vercel.app'],
@@ -151,13 +150,9 @@ app.delete("/delete-video/:id", (req, res)=>{
 });
 app.get('/', (req, res) => {
     res.send('Hello World!');
-  });
+});
 
-
-  const PORT = process.env.PORT || 3030;
-  app.listen(PORT, () => {
+const PORT = process.env.PORT || 3030;
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-  }); 
-// app.listen(3030);
-// // console.log(`Server Started : https://react-video-library-client.vercel.app`);
-// console.log(`Server Started : http://127.0.0.1:3030`);
+}); 
