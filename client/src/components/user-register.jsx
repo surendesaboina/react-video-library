@@ -15,7 +15,7 @@ export   function UserRegister(){
             Mobile:''
         },
         onSubmit: (user)=> {
-            axios.post(`http://localhost:3030/register-user`,user)
+            axios.post(`https://react-video-library-server.vercel.app/register-user`,user)
             .then(()=>{
                 alert('User Registered');
                 navigate('/user-login');

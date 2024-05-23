@@ -14,15 +14,15 @@ export function UserDashboard() {
     const [comments, setComments] = useState({});
 
     function LoadVideos(category = 'ALL') {
-        let url = 'http://localhost:3030/get-videos';
+        let url = 'https://react-video-library-server.vercel.app/get-videos';
         if (category !== 'ALL') {
-            url = `http://localhost:3030/get-videos/${category}`;
+            url = `https://react-video-library-server.vercel.app/get-videos/${category}`;
         }
         axios.get(url)
             .then(response => {
                 setVideos(response.data);
                 response.data.forEach(video => {
-                    axios.get(`http://localhost:3030/get-comments/${video.VideoId}`)
+                    axios.get(`https://react-video-library-server.vercel.app/get-comments/${video.VideoId}`)
                         .then(commentResponse => {
                             setComments(prevComments => ({
                                 ...prevComments,
@@ -44,7 +44,7 @@ export function UserDashboard() {
 
     function handleLikeClick(videoId, liked) {
         const userId = cookies['user-id'];
-        axios.put(`http://localhost:3030/update-like/${videoId}/${liked}/${userId}`)
+        axios.put(`https://react-video-library-server.vercel.app/update-like/${videoId}/${liked}/${userId}`)
             .then(response => {
                 setVideos(prevVideos =>
                     prevVideos.map(video =>
@@ -56,7 +56,7 @@ export function UserDashboard() {
 
     function handleDislikeClick(videoId, disliked) {
         const userId = cookies['user-id'];
-        axios.put(`http://localhost:3030/update-dislike/${videoId}/${disliked}/${userId}`)
+        axios.put(`https://react-video-library-server.vercel.app/update-dislike/${videoId}/${disliked}/${userId}`)
             .then(response => {
                 setVideos(prevVideos =>
                     prevVideos.map(video =>

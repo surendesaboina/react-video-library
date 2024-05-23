@@ -9,7 +9,7 @@ export function AdminDashBoard(){
    
 
     function LoadVideos(){
-        axios.get('http://localhost:3030/get-videos')
+        axios.get('https://react-video-library-server.vercel.app/get-videos')
         .then(response=>{
             setVideos(response.data);
         })

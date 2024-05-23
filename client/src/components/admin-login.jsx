@@ -18,7 +18,7 @@ export  function AdminLogin(){
             Password:''
         },
         onSubmit: (admin) => {
-            axios.get('http://localhost:3030/get-admin')
+            axios.get('https://react-video-library-server.vercel.app/get-admin')
             .then(response=>{
                  if(admin.UserId===response.data[0].UserId && admin.Password===response.data[0].Password){
                      setCookie('admin-id', admin.UserId);

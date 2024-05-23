@@ -8,7 +8,7 @@ function CommentsModal({ show, handleClose, videoId, userId, updateCommentsCount
 
     useEffect(() => {
         if (videoId) {
-            axios.get(`http://localhost:3030/get-comments/${videoId}`)
+            axios.get(`https://react-video-library-server.vercel.app/get-comments/${videoId}`)
                 .then(response => {
                     setComments(response.data);
                 });
@@ -18,7 +18,7 @@ function CommentsModal({ show, handleClose, videoId, userId, updateCommentsCount
     function handleCommentSubmit() {
         const newCommentId = new Date().getTime();
 
-        axios.post('http://localhost:3030/add-comment', {
+        axios.post('https://react-video-library-server.vercel.app/add-comment', {
             CommentId: newCommentId,
             VideoId: videoId,
             CommentText: newComment,

@@ -31,7 +31,7 @@ export function VideoLibraryHome()
     const formik = useFormik({
        initialValues: {UserId:'', UserName:'', Password:'', Email:'', Mobile:''},
        onSubmit: (user)=>{
-        axios.get(`http://localhost:3030/get-users`)
+        axios.get(`https://react-video-library-server.vercel.app/get-users`)
           .then(response=>{
               var data = response.data.find(client=> client.Email===user.Email);
               if(data){
