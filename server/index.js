@@ -2,7 +2,6 @@ var express = require("express");
 var mongoClient = require("mongodb").MongoClient;
 var cors = require("cors");
 
-
 var conString = "mongodb+srv://surendesaboina:Suren%40535@cluster0.zzz2gfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 var app = express();
@@ -148,6 +147,144 @@ app.delete("/delete-video/:id", (req, res)=>{
         })
     });
 });
+
+app.put("/update-like/:id/:like/:userId", (req, res) => {
+    var videoId = parseInt(req.params.id);
+    var like = req.params.like === 'true';
+    var userId = req.params.userId;
+
+    mongoClient.connect(conString).then(clientObject => {
+        var database = clientObject.db("react-video-library");
+        var likeQuery = { VideoId: videoId, LikedBy: userId };
+        database.collection("tblvideos").findOne(likeQuery).then(existingLike => {
+            if (existingLike && like) {
+                database.collection("tblvideos").updateOne(
+                    { VideoId: videoId },
+                    { $inc: { Likes: -1 }, $pull: { LikedBy: userId } }
+                ).then(() => {
+                    database.collection("tblvideos").findOne({ VideoId: videoId }).then(document => {
+                        res.send(document);
+                    });
+                });
+            } else {
+                var updateQuery = like
+                    ? { $inc: { Likes: 1 }, $addToSet: { LikedBy: userId } }
+                    : { $inc: { Likes: -1 }, $pull: { LikedBy: userId } };
+
+                database.collection("tblvideos").updateOne(
+                    { VideoId: videoId },
+                    updateQuery
+                ).then(() => {
+                    database.collection("tblvideos").findOne({ VideoId: videoId }).then(document => {
+                        res.send(document);
+                    });
+                });
+            }
+        });
+    });
+});
+
+app.put("/update-dislike/:id/:dislike/:userId", (req, res) => {
+    var videoId = parseInt(req.params.id);
+    var dislike = req.params.dislike === 'true';
+    var userId = req.params.userId;
+
+    mongoClient.connect(conString).then(clientObject => {
+        var database = clientObject.db("react-video-library");
+        var dislikeQuery = { VideoId: videoId, DislikedBy: userId };
+        database.collection("tblvideos").findOne(dislikeQuery).then(existingDislike => {
+            if (existingDislike && dislike) {
+                database.collection("tblvideos").updateOne(
+                    { VideoId: videoId },
+                    { $inc: { Dislikes: -1 }, $pull: { DislikedBy: userId } }
+                ).then(() => {
+                    database.collection("tblvideos").findOne({ VideoId: videoId }).then(document => {
+                        res.send(document);
+                    });
+                });
+            } else {
+                var updateQuery = dislike
+                    ? { $inc: { Dislikes: 1 }, $addToSet: { DislikedBy: userId } }
+                    : { $inc: { Dislikes: -1 }, $pull: { DislikedBy: userId } };
+
+                database.collection("tblvideos").updateOne(
+                    { VideoId: videoId },
+                    updateQuery
+                ).then(() => {
+                    database.collection("tblvideos").findOne({ VideoId: videoId }).then(document => {
+                        res.send(document);
+                    });
+                });
+            }
+        });
+    });
+});
+
+app.post("/add-comment", (req, res) => {
+    var comment = {
+        CommentId: req.body.CommentId,
+        VideoId: parseInt(req.body.VideoId),
+        CommentText: req.body.CommentText,
+        UserId: req.body.UserId,
+        Timestamp: new Date()
+    };
+
+    mongoClient.connect(conString).then(clientObject => {
+        var database = clientObject.db("react-video-library");
+        database.collection("tblcomments").insertOne(comment).then(() => {
+            console.log('Comment Added');
+            res.end();
+        });
+    });
+});
+
+app.get("/get-comments/:videoId", (req, res) => {
+    var videoId = parseInt(req.params.videoId);
+
+    mongoClient.connect(conString).then(clientObject => {
+        var database = clientObject.db("react-video-library");
+        database.collection("tblcomments").find({ VideoId: videoId }).toArray().then(comments => {
+            res.send(comments);
+            res.end();
+        });
+    });
+});
+
+app.get("/get-comments", (req, res)=>{
+    mongoClient.connect(conString).then(clientObject=>{
+        var database = clientObject.db("react-video-library");
+        database.collection("tblcomments").find({}).toArray().then(documents=>{
+             res.send(documents);
+             res.end();
+        });
+    });
+});
+
+app.get("/get-videos/:category", (req, res) => {
+    const category = req.params.category;
+    mongoClient.connect(conString).then(clientObject => {
+        var database = clientObject.db("react-video-library");
+        if (category === 'ALL') {
+            database.collection("tblvideos").find({}).toArray().then(documents => {
+                res.send(documents);
+                res.end();
+            });
+        } else {
+            database.collection("tblcategories").findOne({ CategoryName: category }).then(categoryDoc => {
+                if (categoryDoc) {
+                    database.collection("tblvideos").find({ CategoryId: categoryDoc.CategoryId }).toArray().then(documents => {
+                        res.send(documents);
+                        res.end();
+                    });
+                } else {
+                    res.send([]);
+                    res.end();
+                }
+            });
+        }
+    });
+});
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });

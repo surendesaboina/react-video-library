@@ -1,0 +1,406 @@
+[{
+  "_id": {
+    "$oid": "664b9f85a2b2107dea765d30"
+  },
+  "CommentId": {
+    "$numberLong": "1716232069200"
+  },
+  "VideoId": 1,
+  "CommentText": "It's great 👍",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-20T19:07:49.212Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee3725dd5098e168fec9b"
+  },
+  "CommentId": {
+    "$numberLong": "1716446066162"
+  },
+  "VideoId": 2,
+  "CommentText": "Tq.... 😊",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:34:26.170Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee39b5dd5098e168fec9c"
+  },
+  "CommentId": {
+    "$numberLong": "1716446107198"
+  },
+  "VideoId": 2,
+  "CommentText": "Nice tips.....",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:35:07.206Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee40a5dd5098e168fec9d"
+  },
+  "CommentId": {
+    "$numberLong": "1716446218129"
+  },
+  "VideoId": 3,
+  "CommentText": "It's simply awesome the way of explaining and keep doing this. Thank you for providing java complete tutorials.",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:36:58.142Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee41b5dd5098e168fec9e"
+  },
+  "CommentId": {
+    "$numberLong": "1716446235442"
+  },
+  "VideoId": 3,
+  "CommentText": "best java course. Simple and detailed explaination. nice and great teaching by madam. I have very doubts before but after listening to this course my doubts got cleared.....",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:37:15.453Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee4315dd5098e168fec9f"
+  },
+  "CommentId": {
+    "$numberLong": "1716446257408"
+  },
+  "VideoId": 3,
+  "CommentText": "An Excellent Trainer, whom I Like and Love so much.....",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:37:37.416Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee43c5dd5098e168feca0"
+  },
+  "CommentId": {
+    "$numberLong": "1716446267892"
+  },
+  "VideoId": 3,
+  "CommentText": "Very easily understand... All topics... Please continue... Remaining missing java topics also...",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:37:47.900Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee4535dd5098e168feca1"
+  },
+  "CommentId": {
+    "$numberLong": "1716446290840"
+  },
+  "VideoId": 3,
+  "CommentText": "#pythonlife మా teachers కంటే చాల బాగా అర్థం అయ్యేలా చెప్తున్నారు. థాంక్స్ బ్రో మీరు చాలా బాగా మంచి వీడియోస్ చేస్తున్నారు. ఇవి బయట నేర్చుకుంటే చాలా money తిస్కుoటారు but basics మాత్రమే నేర్పిస్తారు.  But మీరు మాత్రం free గా చాల బాగా చెప్తున్నారు.ఇలాగే మీకు తెలిసిన అన్ని programing languages courses basics నుండి చెప్పండి. Parts vaise గా చేసి playlist లో పెట్టండి. ",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:38:10.847Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee4605dd5098e168feca2"
+  },
+  "CommentId": {
+    "$numberLong": "1716446304175"
+  },
+  "VideoId": 3,
+  "CommentText": "Best video for java Beginners . Lot of content in 8 hours Thank you so much  Python life.",
+  "UserId": "dinesh",
+  "Timestamp": {
+    "$date": "2024-05-23T06:38:24.182Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee4d45dd5098e168feca3"
+  },
+  "CommentId": {
+    "$numberLong": "1716446420161"
+  },
+  "VideoId": 4,
+  "CommentText": "Worked very well with Win11 and Java18.1. Thank you so much!!",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:40:20.169Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee4de5dd5098e168feca4"
+  },
+  "CommentId": {
+    "$numberLong": "1716446430328"
+  },
+  "VideoId": 4,
+  "CommentText": "Thanks for the video, now I can savagely enter all my friends calls and no error is found.",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:40:30.335Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee4e75dd5098e168feca5"
+  },
+  "CommentId": {
+    "$numberLong": "1716446438660"
+  },
+  "VideoId": 4,
+  "CommentText": "Thank you so much man I thought I would have to restart my computer. Amazing tutorial",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:40:38.669Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee50e5dd5098e168feca6"
+  },
+  "CommentId": {
+    "$numberLong": "1716446478365"
+  },
+  "VideoId": 5,
+  "CommentText": "I'm learning because i want a better job than driving a school bus.  For many who keep asking, I did infact become a computer programmer. I started here learning Python. Then I moved to others like Java and c sharp and plus plus to name a few. I even learned Fortran because of a job needed it(very useful but not at the same time, lol). I've turned a page from working with a company and decided to design games a long time dream of mine. I hope wholeheartedly that this video helps all of you the same way it did for me. Thank you all for the best wishes. They've helped me push along even when I felt I could go any further. You all are the best!",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:41:18.373Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5195dd5098e168feca7"
+  },
+  "CommentId": {
+    "$numberLong": "1716446489126"
+  },
+  "VideoId": 5,
+  "CommentText": "This guy, sat for 1 hour and talked about python, and then released it for free. legend",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:41:29.133Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5325dd5098e168feca8"
+  },
+  "CommentId": {
+    "$numberLong": "1716446514259"
+  },
+  "VideoId": 5,
+  "CommentText": "I have been trying to learn. But the way he has explained so far is super easy and understandable. I wish I could come to this channel earlier.",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:41:54.267Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee53e5dd5098e168feca9"
+  },
+  "CommentId": {
+    "$numberLong": "1716446525778"
+  },
+  "VideoId": 5,
+  "CommentText": "Thanks for this. Getting back into coding after almost a decade away and this was a great way to be introduced to the syntax of a new language",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:42:05.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee54c5dd5098e168fecaa"
+  },
+  "CommentId": {
+    "$numberLong": "1716446540026"
+  },
+  "VideoId": 5,
+  "CommentText": "I want to learn cuz i want to create a program for my children. Ive had a brain injury during a deployment an i find it very difficult to express my thoughts. An i feel if i can create a virtual environment where i can express and leave some learning experiences they might understand me a bit better ",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:42:20.034Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5705dd5098e168fecab"
+  },
+  "CommentId": {
+    "$numberLong": "1716446576159"
+  },
+  "VideoId": 6,
+  "CommentText": "can we just give these people a round of applause for sharing these information for free....",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:42:56.168Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5805dd5098e168fecac"
+  },
+  "CommentId": {
+    "$numberLong": "1716446592426"
+  },
+  "VideoId": 6,
+  "CommentText": "This is one of the best basic HTML course on the internet! Dave took me from nothing to building a basic HTML website in the span of just 2 days. I could understand him even after not being a native english speaker and the experience he has in this field truly speaks, he's a great coder and teacher aswell, thanks dave! ",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:43:12.433Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5965dd5098e168fecad"
+  },
+  "CommentId": {
+    "$numberLong": "1716446614292"
+  },
+  "VideoId": 7,
+  "CommentText": "Sir, the way you navigated the entire course without missing anything is just spectacular. Hats Off to you Sir. You covered almost everything that a beginner can need, and with such a beautiful way of explanation. Couldn't just leave, without putting it out here. Thank you for your hard work.",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:43:34.299Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5ac5dd5098e168fecae"
+  },
+  "CommentId": {
+    "$numberLong": "1716446635593"
+  },
+  "VideoId": 7,
+  "CommentText": "I cannot stress enough how well this tutorial was made.  Objectives, structure and the simple web page at the end, making sure we learn what we watch.  Also, your communication skills are excellent. ",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:43:55.602Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5d05dd5098e168fecaf"
+  },
+  "CommentId": {
+    "$numberLong": "1716446671675"
+  },
+  "VideoId": 8,
+  "CommentText": "I want you to know how much I appreciate the work that you do. You are assisting a lot of students who are having trouble learning difficult concepts taught in schools.",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:44:31.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5e15dd5098e168fecb0"
+  },
+  "CommentId": {
+    "$numberLong": "1716446688758"
+  },
+  "VideoId": 8,
+  "CommentText": "Wow, I just completed your 1-hour MongoDB course and I have to say, it's absolutely fantastic! Thank you so much for creating such an informative and well-structured course. Your explanations were clear and concise, making it incredibly easy for me to grasp the concepts. I loved how you walked through practical examples, giving me a hands-on experience with MongoDB. This course has undoubtedly boosted my understanding of MongoDB and has made me more confident in working with this database. Kudos to you, instructor! I highly recommend this course to anyone looking to dive into MongoDB. Keep up the excellent work! ",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:44:48.766Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5ea5dd5098e168fecb1"
+  },
+  "CommentId": {
+    "$numberLong": "1716446698525"
+  },
+  "VideoId": 8,
+  "CommentText": "Man, youre the best. Ive been getting deep into learning how to program for the past year, and i started creating a website in which ill polish and post all the notes ive gotten through this time. Everything foundation ive built is thanks to you bro, cheers.",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:44:58.534Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee5f45dd5098e168fecb2"
+  },
+  "CommentId": {
+    "$numberLong": "1716446707791"
+  },
+  "VideoId": 8,
+  "CommentText": "Best channel of programming ever, easy to understand and the content is top notch!",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:45:07.798Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee6015dd5098e168fecb3"
+  },
+  "CommentId": {
+    "$numberLong": "1716446721007"
+  },
+  "VideoId": 8,
+  "CommentText": "I want to thank you very much, this is exactly what I was looking for a course of it + nodejs and express js and I was looking for awesome someone like you to give me awesome course ",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:45:21.015Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee7495dd5098e168fecb4"
+  },
+  "CommentId": {
+    "$numberLong": "1716447049370"
+  },
+  "VideoId": 8,
+  "CommentText": "I've been binge watching your hours long videos like some TV show and they are truly interesting and at no point I feel bored.",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:50:49.389Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee75f5dd5098e168fecb5"
+  },
+  "CommentId": {
+    "$numberLong": "1716447071569"
+  },
+  "VideoId": 8,
+  "CommentText": "Thank you so much for this, you deserve so much love bro. Looking forward for a detailed cloud computing oneday ️",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:51:11.578Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "664ee8a95dd5098e168fecb6"
+  },
+  "CommentId": {
+    "$numberLong": "1716447400890"
+  },
+  "VideoId": 9,
+  "CommentText": "Thanks a lot...",
+  "UserId": "suren",
+  "Timestamp": {
+    "$date": "2024-05-23T06:56:40.898Z"
+  }
+}]

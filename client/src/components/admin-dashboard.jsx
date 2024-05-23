@@ -9,7 +9,7 @@ export function AdminDashBoard(){
    
 
     function LoadVideos(){
-        axios.get('https://react-video-library-server.vercel.app/get-videos')
+        axios.get('http://localhost:3030/get-videos')
         .then(response=>{
             setVideos(response.data);
         })
@@ -23,7 +23,7 @@ export function AdminDashBoard(){
 
     return(
         <div>
-            <h5 className="text-center">Admin Dash Board</h5>
+            <h5 className="text-center text-info">Admin Dash Board</h5>
             <Link to="/add-video" className="bi bi-camera-video-fill btn btn-light"> Add New</Link>
             <table className="table table-hover">
                 <thead>

@@ -26,12 +26,12 @@ function App() {
 
 
   return (
-    <div className="container-fluid bg-dark text-white" style={{height:'1000px'}}>
+    <div className="container-fluid bg-dark text-white p-5">
         
        <BrowserRouter>
           <header className='p-3 d-flex justify-content-between'>
 
-            <span className='h2'> <Link to="/" className='text-decoration-none text-white'>Video Library</Link> </span>
+            <span className='h2'> <Link to="/" className='text-decoration-none text-light'>Video Library</Link> </span>
             <div>
             <Link className='bi btn btn-warning me-2 bi-person-fill' to="/user-login"> User Login</Link>
             {

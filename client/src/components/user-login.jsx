@@ -16,7 +16,7 @@ export function UserLogin(){
             Password: ''
         },
         onSubmit: (user)=> {
-            axios.get('https://react-video-library-server.vercel.app/get-users')
+            axios.get('http://localhost:3030/get-users')
             .then(response=>{
                   var data = response.data.find(item => item.UserId===user.UserId);
                   if(data){
@@ -34,8 +34,9 @@ export function UserLogin(){
     })
 
     return(
-        <div>
-            <h2>User Login</h2>
+        <div style={{height:"80vh",marginTop:"-20px"}} className="d-flex justify-content-center align-items-center p-4">
+            <div>
+            <h2 className="text-info text-decoration-underline">User Login</h2>
             <form onSubmit={formik.handleSubmit}>
                 <dl>
                     <dt>User Id</dt>
@@ -45,6 +46,7 @@ export function UserLogin(){
                 </dl>
                 <button type="submit" className="btn btn-warning">Login</button>
             </form>
+            </div>
         </div>
     )
 }

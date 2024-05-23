@@ -10,26 +10,26 @@ export function DeleteVideo()
     const [videos, setVideos] = useState([{VideoId:0, Title:'', Url:'', Description:'', Views:0, Likes:0, Dislikes:0, CategoryId:0}]);
 
     useEffect(()=>{
-        axios.get(`https://react-video-library-server.vercel.app/get-video/${params.id}`)
+        axios.get(`http://localhost:3030/get-video/${params.id}`)
         .then(response=>{
             setVideos(response.data);
         })
     },[])
 
     function handleYesClick(){
-        axios.delete(`https://react-video-library-server.vercel.app/delete-video/${params.id}`)
+        axios.delete(`http://localhost:3030/delete-video/${params.id}`)
         .then(()=>{
             navigate("/admin-dashboard");
         })
     }
 
     return(
-        <div>
+        <div style={{height:"76vh"}}>
             <h3>Delete Video</h3>
             <p>Are you sure? What to Delete?</p>
             <div className="card w-25">
                 <div className="card-header">
-                    <iframe src={videos[0].Url} width="100%"></iframe>
+                    <iframe width="100%" src={`https://www.youtube.com/embed/${videos[0].Url}`} ></iframe>
                 </div>
                 <div className="card-body">
                     {videos[0].Title}

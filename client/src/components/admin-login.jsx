@@ -18,7 +18,7 @@ export  function AdminLogin(){
             Password:''
         },
         onSubmit: (admin) => {
-            axios.get('https://react-video-library-server.vercel.app/get-admin')
+            axios.get('http://localhost:3030/get-admin')
             .then(response=>{
                  if(admin.UserId===response.data[0].UserId && admin.Password===response.data[0].Password){
                      setCookie('admin-id', admin.UserId);
@@ -32,9 +32,9 @@ export  function AdminLogin(){
     })
 
     return(
-        <div className="d-flex justify-content-center align-items-center" style={{height:'100vh'}}>
+        <div className="d-flex justify-content-center align-items-center" style={{height:'76vh'}}>
             <form className="w-25" onSubmit={formik.handleSubmit}>
-                <div className="text-center bi bi-person-circle"> Admin Login</div>
+                <div className="text-center bi bi-person-circle text-info font-weight-bold"> Admin Login</div>
                 <dl>
                     <dt>Admin Id</dt>
                     <dd><input type="text" name="UserId" onChange={formik.handleChange} className="form-control" /></dd>

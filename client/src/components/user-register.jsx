@@ -15,7 +15,7 @@ export   function UserRegister(){
             Mobile:''
         },
         onSubmit: (user)=> {
-            axios.post(`https://react-video-library-server.vercel.app/register-user`,user)
+            axios.post(`http://localhost:3030/register-user`,user)
             .then(()=>{
                 alert('User Registered');
                 navigate('/user-login');
@@ -24,7 +24,7 @@ export   function UserRegister(){
     })
 
     return(
-        <div>
+        <div  style={{minHeight:'76vh'}}>
             <form onSubmit={formik.handleSubmit}>
                 <h3>Register User</h3>
                 <dl>

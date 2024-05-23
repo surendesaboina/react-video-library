@@ -7,4 +7,14 @@
   "Password": "1234",
   "Email": "surenkumar13579@gmail.com",
   "Mobile": "123456"
+},
+{
+  "_id": {
+    "$oid": "664ee3335dd5098e168fec9a"
+  },
+  "UserId": "dinesh",
+  "UserName": "dinesh",
+  "Password": "abc",
+  "Email": "dinesh@gmail.com",
+  "Mobile": "09191"
 }]

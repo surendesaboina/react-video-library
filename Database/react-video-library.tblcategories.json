@@ -7,15 +7,36 @@
 },
 {
   "_id": {
-    "$oid": "6645e70940402e21ac7aa7ae"
-  },
-  "CategoryId": 2,
-  "CategoryName": "Oracel"
-},
-{
-  "_id": {
     "$oid": "6645e70940402e21ac7aa7af"
   },
   "CategoryId": 3,
   "CategoryName": "Java"
+},
+{
+  "_id": {
+    "$oid": "664dec8ce2482613d1bd585e"
+  },
+  "CategoryId": 2,
+  "CategoryName": "Python"
+},
+{
+  "_id": {
+    "$oid": "664dec8ce2482613d1bd585f"
+  },
+  "CategoryId": 4,
+  "CategoryName": "HTML"
+},
+{
+  "_id": {
+    "$oid": "664dec8ce2482613d1bd5860"
+  },
+  "CategoryId": 5,
+  "CategoryName": "SQL"
+},
+{
+  "_id": {
+    "$oid": "664dede2e2482613d1bd5861"
+  },
+  "CategoryId": 6,
+  "CategoryName": "MongoDB"
 }]

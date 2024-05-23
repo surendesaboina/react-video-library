@@ -31,7 +31,7 @@ export function VideoLibraryHome()
     const formik = useFormik({
        initialValues: {UserId:'', UserName:'', Password:'', Email:'', Mobile:''},
        onSubmit: (user)=>{
-        axios.get(`https://react-video-library-server.vercel.app/get-users`)
+        axios.get(`http://localhost:3030/get-users`)
           .then(response=>{
               var data = response.data.find(client=> client.Email===user.Email);
               if(data){
@@ -51,8 +51,8 @@ export function VideoLibraryHome()
     })
 
     return(
-        <div style={{height:'100vh'}} className="d-flex justify-content-center align-items-center">
-             <main className='text-center'>
+        <div style={{height:'76vh'}} className="d-flex justify-content-center align-items-center">
+             <main className='text-center' style={{marginTop:'-250px'}}>
                <h1>Watch Technology Videos</h1>
                <p>Any where any time</p>
                <div className="input-group">
